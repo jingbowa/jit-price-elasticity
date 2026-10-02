@@ -1,0 +1,2 @@
+# Store every file byte for byte (no line-ending conversion), so the files match the checksums in logs/.
+* -text

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the paper."
+title: "Replication package for: Scalable Just-in-Time Price Elasticity Estimation"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Jingbo
+    affiliation: "Chinese University of Hong Kong"
+  - family-names: Huang
+    given-names: Yufeng
+    affiliation: "University of Rochester"
+repository-code: "https://github.com/jingbowa/jit-price-elasticity"
+preferred-citation:
+  type: article
+  title: "Scalable Just-in-Time Price Elasticity Estimation"
+  authors:
+    - family-names: Wang
+      given-names: Jingbo
+      affiliation: "Chinese University of Hong Kong"
+    - family-names: Huang
+      given-names: Yufeng
+      affiliation: "University of Rochester"
+  journal: "Management Science"
+  notes: "Forthcoming"

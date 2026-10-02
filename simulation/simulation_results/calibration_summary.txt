@@ -1,0 +1,108 @@
+========================================================================
+CALIBRATION SUMMARY: Literature-Based DGP Configurations
+========================================================================
+
+Each DGP is parameterized within a random-coefficients logit framework:
+  u_ijt = gamma_i + alpha_i * p_jt + kxi_jt + epsilon_ijt
+  gamma_i = gamma_0 + gamma_1 * ln(income) + gamma_2 * nu_1
+  alpha_i = alpha_0 + alpha_1 * ln(income) + alpha_2 * nu_2
+  kxi_jt  = kxi_j + 0.5 * delta_kxi_j   (product fixed effects)
+  p_jt    = p_base + p_z_scale * z_jt + p_kxi_scale * kxi_jt
+
+gamma_0 is calibrated so mean |own-price elasticity| matches the
+target from the literature. All other parameters are set directly
+from published estimates or chosen to produce realistic market
+shares and price variation.
+
+------------------------------------------------------------------------
+Logit_Wollmann
+  Source: Wollmann (2018) Table 2
+  Type:   logit
+  Target mean |elasticity|: 8.5
+
+  Demand parameters (from literature):
+    alpha_0  =    -0.44   (mean price coefficient)
+    alpha_1  =        0   (price x ln(income))
+    alpha_2  =        0   (price SD / random coefficient)
+    gamma_1  =        0   (constant x ln(income))
+    gamma_2  =        0   (constant SD / random coefficient)
+
+  Calibrated parameters:
+    gamma_0  =    10.7600   (calibrated to match target |elas|)
+    delta_kxi = [-14.0, -4.0, 4.0, 14.0]
+
+  Price-generating parameters:
+    p_base     = [19.0, 23.0, 28.0, 35.0]
+    p_z_scale  = 3.0
+    p_kxi_scale = 0.5
+
+  Achieved simulation outcomes (T=50,000, m=25, 10 MC iterations):
+    Outside share: 0.1859
+
+    Prod     Share     Price   True eps    BNN eps      Cost    True p*     BNN p*    p* Bias
+       1    0.0136     15.73     -6.675     -6.893    13.450     15.733     15.751      0.019
+       2    0.1054     22.19     -8.902     -8.967    19.725     22.189     22.159     -0.030
+       3    0.2815     29.24     -9.621    -10.098    26.255     29.245     29.135     -0.109
+       4    0.4135     38.49     -8.809     -8.519    33.835     38.485     38.312     -0.173
+
+------------------------------------------------------------------------
+RC_Nevo
+  Source: Nevo (2001) Table VI / Conlon & Gortmaker (2020) Table 7
+  Type:   rc
+  Target mean |elasticity|: 3.7
+
+  Demand parameters (from literature):
+    alpha_0  =    -27.5   (mean price coefficient)
+    alpha_1  =      0.8   (price x ln(income))
+    alpha_2  =      2.9   (price SD / random coefficient)
+    gamma_1  =      0.5   (constant x ln(income))
+    gamma_2  =      0.2   (constant SD / random coefficient)
+
+  Calibrated parameters:
+    gamma_0  =     0.2418   (calibrated to match target |elas|)
+    delta_kxi = [6.0, 2.0, -2.0, -6.0]
+
+  Price-generating parameters:
+    p_base     = 0.15
+    p_z_scale  = 0.05
+    p_kxi_scale = 0.01
+
+  Achieved simulation outcomes (T=50,000, m=25, 10 MC iterations):
+    Outside share: 0.7174
+
+    Prod     Share     Price   True eps    BNN eps      Cost    True p*     BNN p*    p* Bias
+       1    0.2205      0.18     -3.783     -3.658     0.140      0.185      0.189      0.004
+       2    0.0481      0.16     -3.960     -4.034     0.123      0.164      0.162     -0.001
+       3    0.0121      0.14     -3.731     -3.648     0.106      0.145      0.144     -0.000
+       4    0.0019      0.12     -3.240     -3.173     0.082      0.120      0.120      0.000
+
+------------------------------------------------------------------------
+RC_BLP
+  Source: BLP (1995) / Conlon & Gortmaker (2020) Table 8
+  Type:   rc
+  Target mean |elasticity|: 3.5
+
+  Demand parameters (from literature):
+    alpha_0  =     -0.3   (mean price coefficient)
+    alpha_1  =     0.05   (price x ln(income))
+    alpha_2  =        0   (price SD / random coefficient)
+    gamma_1  =      0.5   (constant x ln(income))
+    gamma_2  =      3.0   (constant SD / random coefficient)
+
+  Calibrated parameters:
+    gamma_0  =     5.5129   (calibrated to match target |elas|)
+    delta_kxi = [2.0, 0.7, -0.7, -2.0]
+
+  Price-generating parameters:
+    p_base     = 15.0
+    p_z_scale  = 5.0
+    p_kxi_scale = 1.0
+
+  Achieved simulation outcomes (T=50,000, m=25, 10 MC iterations):
+    Outside share: 0.2198
+
+    Prod     Share     Price   True eps    BNN eps      Cost    True p*     BNN p*    p* Bias
+       1    0.3570     16.47     -3.336     -2.922    12.045     16.468     17.120      0.652
+       2    0.2151     15.73     -3.282     -3.399    10.859     15.728     15.450     -0.278
+       3    0.1443     15.14     -3.528     -3.676    10.762     15.140     14.760     -0.380
+       4    0.0638     13.97     -3.731     -3.676    10.053     13.969     13.891     -0.077

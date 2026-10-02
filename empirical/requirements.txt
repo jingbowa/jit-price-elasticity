@@ -1,0 +1,14 @@
+# Tested environment: Python 3.10, Windows 11, NVIDIA RTX 4090 (CUDA 11.8).
+# CPU-only execution works but is slower.
+#
+# For GPU support install torch with the CUDA index, e.g.:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu118
+
+pandas==2.2.3
+numpy==2.2.6
+torch==2.5.1
+pyarrow==19.0.1
+geopandas==1.0.1
+shapely==2.0.6
+matplotlib==3.8.4
+geopy==2.4.1

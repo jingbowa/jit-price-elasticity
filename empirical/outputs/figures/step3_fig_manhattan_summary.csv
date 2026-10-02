@@ -1,0 +1,2 @@
+Borough,Zones_with_data,Total_zones,Mean_elasticity,Median_elasticity,Std_elasticity,Min_elasticity,Max_elasticity,Mean_elasticity_winsorized,Median_elasticity_winsorized,Std_elasticity_winsorized,Min_elasticity_winsorized,Max_elasticity_winsorized
+Manhattan,46,69,-2.373421972840249,-2.257675629504801,4.656938991930791,-18.843041427148133,19.63608915430415,-2.536248002510547,-2.257675629504801,1.4809472709734215,-6.149384328987532,-0.6788197767910249

@@ -1,0 +1,85 @@
+# Table 6 re-run with the submitted package, unchanged.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv 
+name, driver_version, memory.total [MiB]
+NVIDIA GeForce RTX 4090, 610.60, 24564 MiB
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>ver
+
+Microsoft Windows [Version 10.0.26200.9550]
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>python --version 
+Python 3.10.14
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>python -c "import torch, pandas, numpy; print('torch', torch.__version__, '| CUDA build', torch.version.cuda, '| device', torch.cuda.get_device_name(0), '| pandas', pandas.__version__, '| numpy', numpy.__version__)" 
+torch 2.6.0+cu124 | CUDA build 12.4 | device NVIDIA GeForce RTX 4090 | pandas 2.2.3 | numpy 2.1.3
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>certutil -hashfile code_latest\step3_elasticity_estimation\3_estimate_temporal_elasticity.py SHA256 
+SHA256 hash of code_latest\step3_elasticity_estimation\3_estimate_temporal_elasticity.py:
+54dec2394bb597bbfd2f764259e09611b4e69301429688a1e82594a51f300590
+CertUtil: -hashfile command completed successfully.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>certutil -hashfile code_latest\step3_elasticity_estimation\config_quality_filters.py SHA256 
+SHA256 hash of code_latest\step3_elasticity_estimation\config_quality_filters.py:
+57b5eec92a5682c3ab59462d3d6c71233836cec6e89e0882281623c860600734
+CertUtil: -hashfile command completed successfully.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>certutil -hashfile bnn_modules\bnn_torch.py SHA256 
+SHA256 hash of bnn_modules\bnn_torch.py:
+ac16f16050d8d8713552384cfa76fcad089ca480eb5ca01745f08243c589749f
+CertUtil: -hashfile command completed successfully.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>certutil -hashfile outputs\step2_aggregated_markets\markets\step2_markets_2024-01.parquet SHA256 
+SHA256 hash of outputs\step2_aggregated_markets\markets\step2_markets_2024-01.parquet:
+b75da773fdb88de0309cb70d036616643c1c666343073a933d256a961d83866b
+CertUtil: -hashfile command completed successfully.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>certutil -hashfile outputs\step2_aggregated_markets\markets\step2_markets_2024-02.parquet SHA256 
+SHA256 hash of outputs\step2_aggregated_markets\markets\step2_markets_2024-02.parquet:
+dfa94f47c9240a2be82bd764f5bb02f5d3f27dd75e5c57b6fb9b97bedaf1c384
+CertUtil: -hashfile command completed successfully.
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>python code_latest\step3_elasticity_estimation\3_estimate_temporal_elasticity.py 
+Using 17 features (including hour_of_day for temporal analysis)
+Using device: cuda
+
+======================================================================
+LOADING DATA
+======================================================================
+Loading ./outputs/step2_aggregated_markets/markets/step2_markets_2024-01.parquet...
+Loading ./outputs/step2_aggregated_markets/markets/step2_markets_2024-02.parquet...
+Total records (all NYC): 7,462,961
+
+======================================================================
+ZONE SELECTION FOR TEMPORAL ANALYSIS
+======================================================================
+
+Selected 46 zones in Manhattan
+Research question: Does elasticity vary by time of day?
+
+Filtering data to 46 quality-checked zones...
+Records from selected zones: 4,178,873
+Using 4,178,873 complete records
+Estimating 8 periods (boot=100, CI=95%)
+
+Time period subgroup results saved to ./outputs/step3_elasticity_estimates/step3_elasticity_temporal_periods.csv
+
+Temporal elasticity by period (rescaled):
+     period  elasticity  ci_lower  ci_upper  std_error
+05:00-07:59      -1.341    -1.704    -0.978      0.185
+08:00-10:59       0.521    -0.340     1.382      0.439
+11:00-13:59      -4.906    -8.976    -0.837      2.076
+14:00-16:59      -1.576    -2.567    -0.586      0.505
+17:00-19:59      -0.173    -0.392     0.047      0.112
+20:00-22:59       1.404     1.214     1.595      0.097
+23:00-01:59      -1.276    -1.693    -0.858      0.213
+
+jingb@ENDURANCE D:\Data\elasticity_cascad\pristine_empirical>type outputs\step3_elasticity_estimates\step3_elasticity_temporal_periods.csv 
+period,hours,elasticity,ci_lower,ci_upper,std_error
+05:00-07:59,"[5, 6, 7]",-1.340943447079247,-1.7036365010629158,-0.9782503930955782,0.18504747652228
+08:00-10:59,"[8, 9, 10]",0.5210347156730147,-0.3402791622580096,1.3823485936040392,0.43944585608725734
+11:00-13:59,"[11, 12, 13]",-4.9064797861774325,-8.975682988681712,-0.8372765836731535,2.0761240829103467
+14:00-16:59,"[14, 15, 16]",-1.5761796876097554,-2.566661067892806,-0.5856983073267048,0.5053476430015564
+17:00-19:59,"[17, 18, 19]",-0.17274973291622123,-0.39243242809325674,0.046932962260814254,0.11208300774338545
+20:00-22:59,"[20, 21, 22]",1.4040803056923579,1.2135959571223536,1.5945646542623622,0.09718589212755321
+23:00-01:59,"[23, 0, 1]",-1.2756641494854875,-1.6931572029133075,-0.8581710960576674,0.21300665991215312

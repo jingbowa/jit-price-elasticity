@@ -1,0 +1,47 @@
+[
+  {
+    "Sample Size": 5000,
+    "Numba Runtime (Point Estimate)": 0.007257890701293945,
+    "Numba Runtime (100 Bootstrap)": 0.04720261096954346,
+    "PyTorch CPU Runtime (Point Estimate)": 0.046975326538085935,
+    "PyTorch CPU Runtime (100 Bootstrap)": 0.8231439828872681,
+    "PyTorch GPU Runtime (Point Estimate)": 0.0031536340713500975,
+    "PyTorch GPU Runtime (100 Bootstrap)": 0.28949315547943116
+  },
+  {
+    "Sample Size": 20000,
+    "Numba Runtime (Point Estimate)": 0.02740168571472168,
+    "Numba Runtime (100 Bootstrap)": 0.14118571281433107,
+    "PyTorch CPU Runtime (Point Estimate)": 0.03456122875213623,
+    "PyTorch CPU Runtime (100 Bootstrap)": 3.8658435106277467,
+    "PyTorch GPU Runtime (Point Estimate)": 0.011581182479858398,
+    "PyTorch GPU Runtime (100 Bootstrap)": 0.7205644369125366
+  },
+  {
+    "Sample Size": 80000,
+    "Numba Runtime (Point Estimate)": 0.10787913799285889,
+    "Numba Runtime (100 Bootstrap)": 0.22202646732330322,
+    "PyTorch CPU Runtime (Point Estimate)": 0.11939132213592529,
+    "PyTorch CPU Runtime (100 Bootstrap)": 14.452080726623535,
+    "PyTorch GPU Runtime (Point Estimate)": 0.02300255298614502,
+    "PyTorch GPU Runtime (100 Bootstrap)": 2.3506604433059692
+  },
+  {
+    "Sample Size": 320000,
+    "Numba Runtime (Point Estimate)": 0.3625962495803833,
+    "Numba Runtime (100 Bootstrap)": 1.4841970205307007,
+    "PyTorch CPU Runtime (Point Estimate)": 0.47603368759155273,
+    "PyTorch CPU Runtime (100 Bootstrap)": 48.93748111724854,
+    "PyTorch GPU Runtime (Point Estimate)": 0.05771951675415039,
+    "PyTorch GPU Runtime (100 Bootstrap)": 3.704331707954407
+  },
+  {
+    "Sample Size": 1280000,
+    "Numba Runtime (Point Estimate)": 1.5553937911987306,
+    "Numba Runtime (100 Bootstrap)": 7.212694859504699,
+    "PyTorch CPU Runtime (Point Estimate)": 1.6423339128494263,
+    "PyTorch CPU Runtime (100 Bootstrap)": 168.80602486133574,
+    "PyTorch GPU Runtime (Point Estimate)": 0.08315656185150147,
+    "PyTorch GPU Runtime (100 Bootstrap)": 6.95346691608429
+  }
+]

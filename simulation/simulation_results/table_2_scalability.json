@@ -1,0 +1,47 @@
+[
+  {
+    "Sample Size": 5000,
+    "Numba Runtime (Point Estimate)": 0.0066328287124633786,
+    "Numba Runtime (100 Bootstrap)": 0.04678514003753662,
+    "PyTorch CPU Runtime (Point Estimate)": 0.04035079479217529,
+    "PyTorch CPU Runtime (100 Bootstrap)": 1.1523293256759644,
+    "PyTorch GPU Runtime (Point Estimate)": 0.0031877756118774414,
+    "PyTorch GPU Runtime (100 Bootstrap)": 0.2872206687927246
+  },
+  {
+    "Sample Size": 20000,
+    "Numba Runtime (Point Estimate)": 0.023391103744506835,
+    "Numba Runtime (100 Bootstrap)": 0.08143882751464844,
+    "PyTorch CPU Runtime (Point Estimate)": 0.03614530563354492,
+    "PyTorch CPU Runtime (100 Bootstrap)": 5.277761006355286,
+    "PyTorch GPU Runtime (Point Estimate)": 0.01385061740875244,
+    "PyTorch GPU Runtime (100 Bootstrap)": 0.7940071105957032
+  },
+  {
+    "Sample Size": 80000,
+    "Numba Runtime (Point Estimate)": 0.10503923892974854,
+    "Numba Runtime (100 Bootstrap)": 0.18665168285369874,
+    "PyTorch CPU Runtime (Point Estimate)": 0.12902188301086426,
+    "PyTorch CPU Runtime (100 Bootstrap)": 15.95751667022705,
+    "PyTorch GPU Runtime (Point Estimate)": 0.030507826805114747,
+    "PyTorch GPU Runtime (100 Bootstrap)": 2.5163105010986326
+  },
+  {
+    "Sample Size": 320000,
+    "Numba Runtime (Point Estimate)": 0.36186578273773196,
+    "Numba Runtime (100 Bootstrap)": 1.0240784168243409,
+    "PyTorch CPU Runtime (Point Estimate)": 0.31084158420562746,
+    "PyTorch CPU Runtime (100 Bootstrap)": 29.427415680885314,
+    "PyTorch GPU Runtime (Point Estimate)": 0.05110523700714111,
+    "PyTorch GPU Runtime (100 Bootstrap)": 3.594473457336426
+  },
+  {
+    "Sample Size": 1280000,
+    "Numba Runtime (Point Estimate)": 1.4909217357635498,
+    "Numba Runtime (100 Bootstrap)": 5.71437439918518,
+    "PyTorch CPU Runtime (Point Estimate)": 1.006494951248169,
+    "PyTorch CPU Runtime (100 Bootstrap)": 116.95381317138671,
+    "PyTorch GPU Runtime (Point Estimate)": 0.08170888423919678,
+    "PyTorch GPU Runtime (100 Bootstrap)": 6.398020172119141
+  }
+]
